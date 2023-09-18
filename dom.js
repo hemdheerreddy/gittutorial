@@ -24,9 +24,15 @@ console.log(headerTitle.textContent);
 console.log(headerTitle.innerText);
 // headerTitle.innerHTML = '<h3>Hello</h3>';
 header.style.borderBottom = 'solid 3px #000';
-var header2= document.getElementById('main');
-header2.style.fontWeight = 'bold';
-header2.style.color = 'green';
+// var header2= document.getElementById('main');
+// header2.style.fontWeight = 'bold';
+// header2.style.color = 'green';
+var listItems = document.querySelectorAll("#items li");
+    for (var i = 0; i < listItems.length; i++) {
+        listItems[i].classList.add("bold");
+    }
+    var thirdElement = document.querySelector("#items li:nth-child(3)");
+    thirdElement.style.backgroundColor = "green";
 
 
 
