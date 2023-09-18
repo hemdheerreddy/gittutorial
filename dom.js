@@ -27,13 +27,26 @@ header.style.borderBottom = 'solid 3px #000';
 // var header2= document.getElementById('main');
 // header2.style.fontWeight = 'bold';
 // header2.style.color = 'green';
-var listItems = document.querySelectorAll("#items li");
-    for (var i = 0; i < listItems.length; i++) {
-        listItems[i].classList.add("bold");
-    }
-    var thirdElement = document.querySelector("#items li:nth-child(3)");
-    thirdElement.style.backgroundColor = "green";
+// var listItems = document.querySelectorAll("#items li");
+//     for (var i = 0; i < listItems.length; i++) {
+//         listItems[i].style.fontWeight = "bold";
+//     }
+//     var thirdElement = document.querySelector("#items li:nth-child(3)");
+//     thirdElement.style.backgroundColor = "green";
 
+//Using Class Name
+// var item=document.getElementsByClassName('list-group-item');
+// item[2].style.backgroundColor='green';
+// for(var i=0;i<item.length;i++){
+//     item[i].style.fontWeight='bold';
+// }
+
+//Using Tag Name
+var item=document.getElementsByTagName('li');
+item[2].style.backgroundColor='green';
+for(var i=0;i<item.length;i++){
+    item[i].style.fontWeight='bold';
+}
 
 
 
