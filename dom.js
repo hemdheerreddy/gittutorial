@@ -42,11 +42,25 @@ header.style.borderBottom = 'solid 3px #000';
 // }
 
 //Using Tag Name
-var item=document.getElementsByTagName('li');
-item[2].style.backgroundColor='green';
-for(var i=0;i<item.length;i++){
-    item[i].style.fontWeight='bold';
-}
+// var item=document.getElementsByTagName('li');
+// item[2].style.backgroundColor='green';
+// for(var i=0;i<item.length;i++){
+//     item[i].style.fontWeight='bold';
+// }
+
+//Query Selector
+var seconditem=document.querySelector('#items li:nth-child(2)');
+seconditem.style.backgroundColor='green';
+var thirditem=document.querySelector('#items li:nth-child(3)');
+thirditem.style.display='none';
+
+//Query Selector All
+var item=document.querySelectorAll('.items:nth-child(2)');
+item.style.color='green';
+var odditem=document.querySelectorAll('.items:nth-child(odd)');
+odditem.forEach(function(item) {
+    item.style.backgroundColor = 'green';
+});
 
 
 
