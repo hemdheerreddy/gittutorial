@@ -7,6 +7,10 @@ inputs.addEventListener('submit', function(e){
      name: nameInput,
      email: emailInput
     }
-    localStorage.setItem('userdetails', JSON.stringify(userdetails)); 
-     form.reset();
+    localStorage.setItem('userdetails', JSON.stringify(userdetails));
+    showuserdetails(userdetails);
 })
+function showuserdetails(userdetails){
+    var user=document.getElementById('listofitems');
+    user.innerHTML=user.innerHTML+'<li>'+userdetails.name+' - '+userdetails.email+'</li>';
+}   
