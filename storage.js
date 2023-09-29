@@ -23,7 +23,20 @@ function showuserdetails(userdetails){
         localStorage.removeItem(userdetails.email);
         parent.removeChild(child);
     }
+    //edit button
+    const editbtn=document.createElement('input');
+    editbtn.type="button";
+    editbtn.value='Edit';
+    editbtn.onclick = () => {
+        var nameInput= document.getElementById('name');
+        var emailInput= document.getElementById('email');
+        nameInput.value=userdetails.name;
+        emailInput.value=userdetails.email;
+        localStorage.removeItem(userdetails.email);
+        parent.removeChild(child);
+    }
     child.appendChild(deletebtn);
+    child.appendChild(editbtn);
     parent.appendChild(child);
 }  
 
