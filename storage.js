@@ -7,10 +7,23 @@ inputs.addEventListener('submit', function(e){
      name: nameInput,
      email: emailInput
     }
-    localStorage.setItem('userdetails', JSON.stringify(userdetails));
+    var userid=emailInput
+    localStorage.setItem(userid, JSON.stringify(userdetails));
     showuserdetails(userdetails);
 })
 function showuserdetails(userdetails){
-    var user=document.getElementById('listofitems');
-    user.innerHTML=user.innerHTML+'<li>'+userdetails.name+' - '+userdetails.email+'</li>';
-}   
+    var parent=document.getElementById('listofitems');
+    var child=document.createElement('li');
+    child.textContent=userdetails.name+' - '+userdetails.email;
+    //delete button
+    const deletebtn=document.createElement('input');
+    deletebtn.type="button";
+    deletebtn.value='Delete';
+    deletebtn.onclick = () => {
+        localStorage.removeItem(userdetails.email);
+        parent.removeChild(child);
+    }
+    child.appendChild(deletebtn);
+    parent.appendChild(child);
+}  
+
